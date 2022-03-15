@@ -1,16 +1,16 @@
 import java.util.Arrays;
 
-public class ArrayList {
-    private Integer[] elementData=new Integer[0];
+public class ArrayList<T> {
+    private Object[] elementData=new Object[0];
 
 
     public static void main(String[] args) {
-        ArrayList arrayList=new ArrayList();
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(400);
-        arrayList.add(300,2);
-
+        ArrayList<String> arrayList= new ArrayList<>();
+        arrayList.add("Bir");
+        arrayList.add("Ikki");
+        arrayList.add("Uch");
+        arrayList.add("To'rt",2);
+        System.out.println(arrayList);
         System.out.println(arrayList.get(2));
         arrayList.remove(1);
 
@@ -19,7 +19,7 @@ public class ArrayList {
 
 
 
-    public void add(int value,int index){
+    public void add(T value,int index){
         checkIndex(index);
         elementData[index]=value;
     }
@@ -34,9 +34,10 @@ public class ArrayList {
         return elementData.length < index || index < -1;
     }
 
-    public Integer get(int index){
+    @SuppressWarnings("unchecked")
+    public T get(int index){
         checkIndex(index);
-        return elementData[index];
+        return (T) elementData[index];
     }
     public boolean remove(int index){
         checkIndex(index);
@@ -56,12 +57,12 @@ public class ArrayList {
     }
 
 
-    public void add(int value) {
+    @SuppressWarnings("unchecked")
+    public void add(T value) {
         int size = elementData.length;
-        add(value,elementData.clone(),size+1);
-
+        add(value, (T[]) elementData.clone(),size+1);
     }
-    private void add(Integer newValue,Integer[] arr,Integer size){
+    private void add(T newValue,T[] arr,Integer size){
         elementData = Arrays.copyOf(arr, size);
         elementData[size-1] = newValue;
     }
