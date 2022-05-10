@@ -5,10 +5,20 @@ package object;/*
 
 import java.time.LocalDate;
 
-public class User {
+public class User implements Cloneable {
     private LocalDate birthDate;
     private String firstName;
     private String lastName;
+
+    /**
+     * Example creation object like Prototype pattern
+     * @return {@code User}
+     * @throws CloneNotSupportedException
+     */
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return new User(this.getBirthDate(), this.getFirstName(), this.getLastName());
+    }
 
     public User(LocalDate birthDate, String firstName, String lastName) {
         this.birthDate = birthDate;

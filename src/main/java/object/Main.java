@@ -10,14 +10,15 @@ import java.util.Map;
 import java.util.Set;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         User user1 = new User(LocalDate.of(1990, 1, 10), "User", "Test");
         User user2 = new User(LocalDate.of(1990, 1, 10), "User", "Test");
         User user3 = new User(LocalDate.of(1992, 3, 20), "User", "Test");
         System.out.println(user2.hashCode());
         System.out.println(user1.hashCode());
 
-
+        User clone = (User) user1.clone();
+        System.out.println(clone);
         Set<User> userSet = new HashSet<>();
         userSet.add(user1);
         userSet.add(user2);
