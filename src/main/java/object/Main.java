@@ -11,11 +11,13 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
-        User user1 = new User(LocalDate.of(1990, 1, 10), "User", "Test");
-        User user2 = new User(LocalDate.of(1990, 1, 10), "User", "Test");
-        User user3 = new User(LocalDate.of(1992, 3, 20), "User", "Test");
+        User user1 = new User(LocalDate.of(1990, 1, 10), 200,"User", "Test");
+        User user2 = new User(LocalDate.of(1990, 1, 10), 200,"User", "Test");
+        User user3 = new User(LocalDate.of(1992, 3, 20), 200,"User", "Test");
+        System.out.println(user2.equals(user1));
         System.out.println(user2.hashCode());
         System.out.println(user1.hashCode());
+
 
         User clone = (User) user1.clone();
         System.out.println(clone);
