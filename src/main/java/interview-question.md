@@ -21,3 +21,7 @@
 ### Why string has separated pool in heap memory ?
   - It is just like object allocation. By default, it is empty and privately maintained by the Java String class. Whenever we create a string the string object occupies some space in the heap memory. Creating a number of strings may increase the cost and memory too which may reduce the performance also.
 ### Autoboxing and Unboxing?
+
+
+
+### Contrast between RabbitMq and Kafka

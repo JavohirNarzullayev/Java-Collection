@@ -4,9 +4,7 @@ package proxy;/*
   Time: 1:23 PM*/
 
 
-import proxy.javadynamic.CustomInvocationHandler;
 
-import java.lang.reflect.Proxy;
 
 public class UserCustomReader implements Reader {
 
